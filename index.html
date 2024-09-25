@@ -1,0 +1,38 @@
+<script>
+    function verificaAnagrama(palavra1, palavra2) {
+  // Verifica se as palavras têm o mesmo comprimento
+  if (palavra1.length !== palavra2.length) {
+    return false;
+  }
+
+  // Converte as palavras em arrays de caracteres
+  let arr1 = palavra1.split('');
+  let arr2 = palavra2.split('');
+
+  // Ordena os arrays de caracteres
+  arr1.sort();
+  arr2.sort();
+
+  // Verifica se os arrays ordenados são iguais
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+// Pede ao usuário para digitar duas palavras
+let palavra1 = prompt("Digite a primeira palavra:");
+let palavra2 = prompt("Digite a segunda palavra:");
+
+// Verifica se as palavras são anagramas
+if (verificaAnagrama(palavra1, palavra2)) {
+  alert("As palavras são anagramas!");
+} else {
+  alert("As palavras não são anagramas.");
+}
+
+
+</script>
