@@ -1,38 +1,46 @@
 <script>
-    function verificaAnagrama(palavra1, palavra2) {
-  // Verifica se as palavras têm o mesmo comprimento
-  if (palavra1.length !== palavra2.length) {
-    return false;
-  }
-
-  // Converte as palavras em arrays de caracteres
-  let arr1 = palavra1.split('');
-  let arr2 = palavra2.split('');
-
-  // Ordena os arrays de caracteres
-  arr1.sort();
-  arr2.sort();
-
-  // Verifica se os arrays ordenados são iguais
-  for (let i = 0; i < arr1.length; i++) {
-    if (arr1[i] !== arr2[i]) {
+  function verificar_anagrama (palavra1, palavra2) {
+    // Verifica se as palavras têm o mesmo comprimento
+    if (palavra1.length !== palavra2.length) {
       return false;
     }
+
+    // Converte as palavras em arrays de caracteres
+    palavra1Array = palavra1.split('');
+    palavra2Array = palavra2.split('');
+
+    // Ordena os arrays de caracteres
+    palavra1Array.sort();
+    palavra2Array.sort();
+
+    // Verifica se os arrays ordenados são iguais
+    for (i = 0; i < palavra1Array.length; i++) {
+      if (palavra1Array[i] !== palavra2Array[i]) {
+        return false;
+      }
+    }
+
+    return true;
   }
 
-  return true;
-}
+  // Pede ao usuário para digitar duas palavras
+  palavra1 = prompt("Digite a primeira palavra:");
+  palavra2 = prompt("Digite a segunda palavra:");
 
-// Pede ao usuário para digitar duas palavras
-let palavra1 = prompt("Digite a primeira palavra:");
-let palavra2 = prompt("Digite a segunda palavra:");
-
-// Verifica se as palavras são anagramas
-if (verificaAnagrama(palavra1, palavra2)) {
-  alert("As palavras são anagramas!");
-} else {
-  alert("As palavras não são anagramas.");
-}
-
-
+  //  Verifica se as palavras são anagramas
+  if (verificar_anagrama (palavra1, palavra2)) {
+    alert("As palavras são anagramas!");
+  } else {
+    alert("As palavras não são anagramas.");
+  }
 </script>
+<!-- // No contexto do código, palavra1.split(''); e palavra2.split(''); são usados para converter as strings palavra1 e palavra2 em arrays de caracteres, que podem ser ordenados e comparados para verificar se as palavras são anagramas -->
+ <!--  -->
+
+ <!-- if (palavra1.length !== palavra2.length) { ... }: aqui, está sendo verificado se as palavras palavra1 e palavra2 têm o mesmo número de caracteres. Se não tiverem, a função verificaAnagrama retorna false.
+for (i = 0; i < palavra1Array.length; i++) { ... }: aqui, está sendo usado um loop for para iterar sobre os elementos do array palavra1Array. O loop irá executar palavra1Array.length vezes, ou seja, uma vez para cada caractere na palavra palavra1. -->
+
+<!-- O loop for itera sobre os elementos do array palavra1Array.
+Em cada iteração, o código verifica se o elemento i do array palavra1Array é igual ao elemento i do array palavra2Array.
+Se os elementos forem diferentes, o método verificaAnagrama retorna false, indicando que as palavras não são anagramas.
+Se o loop completar sem encontrar nenhum elemento diferente, o método verificaAnagrama não retorna nada (ou seja, retorna undefined), o que significa que as palavras são anagramas. -->
