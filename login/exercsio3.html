@@ -1,0 +1,25 @@
+<script>
+    // Função que pede ao usuário para digitar uma lista de números
+    function listaDeNumeros() {
+        // Exibe um prompt para o usuário digitar uma lista de números separados por vírgula
+        let numeros = prompt("Digite uma lista de números separados por vírgula:");
+
+        // Divide a string digitada pelo usuário em um array de strings, separando por vírgula
+        let arr = numeros.split(",");
+
+        // Converte cada string em um número usando o método map()
+        arr = arr.map(Number);
+
+        // Filtra o array para apenas os números que são múltiplos de 3
+        let multiplosDe3 = arr.filter(function (num) {
+            // Verifica se o número é múltiplo de 3
+            return num % 3 === 0;
+        });
+
+        // Exibe os números que são múltiplos de 3
+        alert("Os números múltiplos de 3 são: " + multiplosDe3);
+    }
+
+    // Chama a função listaDeNumeros
+    listaDeNumeros();
+</script>

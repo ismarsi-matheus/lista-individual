@@ -1,0 +1,38 @@
+<script>
+    // Função que filtra as strings que começam com uma vogal
+function filtrarVogais() {
+  // Pede ao usuário para digitar uma lista de strings separadas por vírgula
+  let arr = prompt("Digite uma lista de palavras separadas por vírgula:");
+  
+  // Divide a lista de strings em um array
+  arr = arr.split(",");
+  
+  // Cria uma nova array que armazenará as strings que começam com uma vogal
+  let novaArray = [];
+  
+  // Loop que itera sobre a array original
+  for (let i = 0; i < arr.length; i++) {
+    // Verifica se a string começa com uma vogal
+    if (ehVogal(arr[i][0])) {
+      // Se sim, adiciona a string à nova array
+      novaArray.push(arr[i]);
+    }
+  }
+  
+  // Exibe a nova array com as strings que começam com uma vogal
+  alert("As strings que começam com uma vogal são: " + novaArray);
+}
+
+// Função auxiliar que verifica se um caractere é uma vogal
+function ehVogal(caractere) {
+  // String que contém todas as vogais maiúsculas e minúsculas
+  let vogais = 'aeiouAEIOU';
+  
+  // Verifica se o caractere está presente na string de vogais
+  return vogais.indexOf(caractere) !== -1;
+}
+
+// Chama a função filtrarVogais
+filtrarVogais();
+
+</script>

@@ -1,0 +1,26 @@
+<script>
+    // Define a função segundoMaior
+function segundoMaior() {
+  // Exibe um prompt para o usuário digitar uma lista de números separados por vírgula
+  let numeros = prompt("Digite uma lista de números separados por vírgula:");
+  
+  // Divide a string digitada pelo usuário em um array de strings, separando por vírgula
+  // e converte cada string em um número usando o método map()
+  let arr = numeros.split(",").map(Number);
+  
+  // Ordena o array em ordem decrescente usando o método sort()
+  arr = arr.sort((a, b) => b - a);
+  
+  // Verifica se o array tem menos de 2 elementos
+  if (arr.length < 2) {
+    // Se sim, exibe uma mensagem de erro para o usuário
+    alert("Por favor, digite pelo menos 2 números.");
+  } else {
+    // Se não, exibe o segundo maior número do array
+    alert("O segundo maior número é: " + arr[1]);
+  }
+}
+
+// Chama a função segundoMaior
+segundoMaior();
+</script>

@@ -1,0 +1,25 @@
+<script>
+    // Função que pede ao usuário para digitar um número
+function somaImpares() {
+  // Exibe um prompt para o usuário digitar um número
+  let num = parseInt(prompt("Digite um número:"));
+  
+  // Inicializa a variável que armazenará a soma dos números impares
+  let soma = 0;
+  
+  // Loop que itera de 1 até o número digitado pelo usuário
+  for (let i = 1; i <= num; i++) {
+    // Verifica se o número é ímpar
+    if (i % 2 !== 0) {
+      // Se sim, soma o número à variável soma
+      soma += i;
+    }
+  }
+  
+  // Exibe a soma dos números impares
+  alert("A soma dos números impares até " + num + " é: " + soma);
+}
+
+// Chama a função somaImpares
+somaImpares();
+</script>
